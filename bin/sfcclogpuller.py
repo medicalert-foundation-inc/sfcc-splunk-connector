@@ -110,7 +110,7 @@ def get_file_list(file_pattern):
         "Authorization": "Basic %s" % get_basic_auth(),
         "Depth": "1"
     }
-    req = urlrequest.Request(url, PROPFIND, headers)
+    req = urlrequest.Request(url, bytes(PROPFIND, 'utf-8'), headers)
     req.get_method = lambda: 'PROPFIND'
     response = urlrequest.urlopen(req)
     
